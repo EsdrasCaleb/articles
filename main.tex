@@ -934,7 +934,341 @@ While \textbf{conventional recovery** (land or sea) is challenging but demonstra
 A more viable approach would be conventional recovery (via parachute to ocean or land) followed by refurbishment and relaunch from the platform—a separation of concerns that allows each system (launch platform, recovery infrastructure) to be optimized for its primary function.
 
 This section has established that reusability involves substantial additional requirements beyond simple detachability, and that recovery to the stratospheric platform itself presents formidable challenges that likely outweigh theoretical benefits. The final section will provide a comprehensive conclusion summarizing the feasibility assessment.
-\section{Conclusion}
+\section{Preliminary Financial Model}
+\label{sec:financial}
+
+This section presents a transparent preliminary financial model for the modular stratospheric platform concept. The author-proposed targets—capital expenditure US$150–300 million, launch cost US$500/kg, conventional launch reference US$6,000/kg, and payback under one year—are critically evaluated as unverified hypotheses. All financial assumptions are explicit, and sensitivity analysis is performed to identify dominant drivers and assess mutual consistency.
+
+\subsection{Cost Structure and Capital Expenditure}
+The capital expenditure (CAPEX) encompasses development, manufacturing, deployment, and initial operational infrastructure. We break down the cost categories based on analogous aerospace and high-altitude systems.
+
+\subsubsection{Development and Engineering}
+Non-recurring engineering (NRE) includes system design, simulation, subscale testing, and prototype fabrication. For a novel integrated system combining aerostats, vacuum tubes, and hypersonic pneumatics, NRE could range from US$50–150 million, assuming significant technology maturation effort (similar to X-plane programs) \cite{nasa_cost_handbook}.
+
+\subsubsection{Manufacturing and Production}
+Recurring costs include aerostat modules, accelerator tube segments, vacuum systems, gas handling, control electronics, and launch infrastructure. Assuming a production run of 100 aerostat modules and 3 km of tube, material and fabrication costs may total US$30–80 million, depending on material choices (e.g., composites vs. aluminum) and economies of scale \cite{aerospace_cost_manual}.
+
+\subsubsection{Deployment and Integration}
+Deployment involves transporting components to the equatorial launch site, assembling the aerostat array, installing the accelerator tube, and integrating power and control systems. Deployment costs, including site preparation, permits, and initial fill of lifting gas, could add US$10–30 million \cite{faa_commercial_space}.
+
+\subsubsection{Initial Operational Spares and Support}
+Initial spares, ground support equipment, and training for operations staff may require US$5–20 million.
+
+\subsubsection{Total CAPEX Range}
+Summing the above categories yields a preliminary CAPEX estimate of US$95–280 million, which overlaps with the author-proposed range of US$150–300 million. The lower end assumes aggressive cost reductions and heritage technology, while the upper end reflects uncertainty in novel subsystems.
+
+\subsection{Operational Expenditure and Launch Cost}
+Operational expenditure (OPEX) per launch includes consumables, staffing, maintenance, payload integration, recovery, and insurance. We estimate OPEX to derive a realistic launch price.
+
+\subsubsection{Consumables per Launch}
+Consumables include lifting gas (hydrogen or helium) for buoyancy and make-up, propellant for the service module (if used), and any expendable thermal protection. For hydrogen at ~US$1–5/kg (production and liquefaction) and a typical usage of 500 kg per lift cycle, gas costs range US$500–2,500. Helium is significantly more expensive (~US$10–20/kg) but may be required for safety. Service module propellant (e.g., monopropellant hydrazine) at ~US$20–50/kg and a 10–20 kg budget adds US$200–1,000.
+
+\subsubsection{Staffing and Operations}
+A launch campaign requires personnel for aerostat station-keeping, tube monitoring, gas systems, launch control, and range safety. Assuming a team of 20 specialists at an average loaded cost of US$200,000/year (including benefits and overhead), and a launch cycle of 1 week (including preparation, launch, and reset), the staffing cost per launch is approximately:
+\begin{equation}
+C_{staff} = \frac{20 \times 200{,}000}{52} \approx US$77{,}000
+\end{equation}
+
+\subsubsection{Maintenance and Refurbishment}
+Between launches, the aerostat envelope may require inspection for UV damage, seam integrity, and gas leakage. The accelerator tube may need valve maintenance, seal replacement, and vacuum pump servicing. Assuming a maintenance effort equivalent to 10% of the CAPEX amortized over a expected flight rate (see Section \ref{subsec:utilization}), we model maintenance as a recurring cost.
+
+\subsubsection{Payload Integration and Recovery}
+Customer payload integration, including interface testing, environmental screening, and encapsulation, could cost US$5–20 per kilogram, or US$750–3,000 for a 150 kg payload. Recovery of the service module (if applicable) adds costs for telemetry, retrieval, and refurbishment (see Section \ref{sec:recovery}).
+
+\subsubsection{Insurance and Liability}
+Launch liability insurance for third-party damage is required. For suborbital or orbital launch ventures, premiums can range from 5–15% of the launch value \cite{space_insurance_survey}. Assuming a launch price of US$500/kg (US$75,000 per 150 kg launch), insurance might add US$3,750–11,250 per launch.
+
+\subsubsection{Total OPEX per Launch}
+Summing consumables, staffing, maintenance, integration, recovery, and insurance yields an estimated OPEX range of US$100,000–300,000 per launch. This translates to a cost of US$667–2,000 per kilogram for a 150 kg payload.
+
+\subsection{Revenue and Launch Price}
+Revenue per launch is determined by the launch price charged to customers. The author-proposed target of US$500/kg (US$75,000 per launch) is evaluated against the OPEX estimate above and the conventional launch reference of US$6,000/kg (US$900,000 per 150 kg launch) \cite{faa_launch_cost_survey}.
+
+If the OPEX is indeed US$100,000–300,000, then a price of US$75,000 would yield a gross margin of US$(75{,}000 - 200{,}000)$ to US$(75{,}000 - 100{,}000)$, which is negative at the higher OPEX estimate. Therefore, to achieve a positive margin, either OPEX must be reduced below US$75,000 or the launch price must be increased.
+
+\subsection{Utilization and Annual Throughput}
+The annual revenue depends on the launch cadence and payload utilization. We define:
+\begin{itemize}
+    \item \textbf{Launches per year ($N_{launch}$)}: Number of successful launch cycles per year.
+    \item \item \item \textbf{Payload utilization factor ($U_{payload}$)}: Fraction of the 150 kg payload capacity actually sold and flown (accounting for customer demand, manifest efficiency, and potential flyweight).
+\end{itemize}
+
+The annual throughput in kilograms is:
+\begin{equation}
+M_{annual} = N_{launch} \times 150  \text{kg} \times U_{payload}
+\end{equation}
+
+Annual revenue is:
+\begin{equation}
+R_{annual} = N_{launch} \times 150  \text{kg} \times U_{payload} \times P_{launch}
+\end{equation}
+where $P_{launch}$ is the launch price per kilogram.
+
+Assuming a target of $P_{launch} = $US$500/kg$, and exploring plausible values:
+\begin{itemize}
+    \item \textbf{Conservative scenario}: $N_{launch} = 6$ launches/year (every two months), $U_{payload} = 0.5$ (50\% utilization), then $M_{annual} = 6 \times 150 \times 0.5 = 450$ kg/year, and $R_{annual} = 450 \times 500 = US$225,000/year.
+    \item \item \item \textbf{Moderate scenario}: $N_{launch} = 12$ launches/year (monthly), $U_{payload} = 0.7$, then $M_{annual} = 12 \times 150 \times 0.7 = 1,260$ kg/year, $R_{annual} = 1,260 \times 500 = US$630,000/year.
+    \item \item \item \textbf{Optimistic scenario}: $N_{launch} = 24$ launches/year (twice monthly), $U_{payload} = 0.9$, then $M_{annual} = 24 \times 150 \times 0.9 = 3,240$ kg/year, $R_{annual} = 3,240 \times 500 = US$1,620,000/year.
+\end{itemize}
+
+Even the optimistic scenario yields only US$1.62 million in annual revenue, far below the CAPEX of US$150–300 million. Therefore, a payback period under one year would require either:
+\begin{itemize}
+    \item \item \item \textbf{Extremely high launch cadence}: $N_{launch} > 200$ launches/year (more than every other day) with high utilization, which is implausible given the operational complexity of the system.
+    \item \item \item \textbf{Substantial price increase}: $P_{launch} > $US$3,000/kg to reach US$5–9 million annual revenue in the optimistic scenario, still insufficient for rapid payback.
+    \item \item \item \item \item \item \textbf{Massive reduction in CAPEX}: CAPEX below US$50 million, which contradicts the author-proposed range and the cost breakdown above.
+\end{itemize}
+
+\subsection{Sensitivity Analysis}
+We perform a sensitivity analysis on key parameters to identify dominant assumptions and test the mutual consistency of the author-proposed targets.
+
+\subsubsection{Capital Cost Sensitivity}
+If CAPEX is fixed at US$200 million (midpoint of author-proposed range), the required annual net cash flow for a one-year payback (ignoring time value of money) is US$200 million. Assuming a simple profit model where annual profit = annual revenue – annual OPEX (excluding CAPEX amortization), we solve for required launch cadence and price.
+
+Let $C_{launch,opex}$ be the OPEX per launch in dollars. Then annual profit is:
+\begin{equation}
+\pi_{annual} = N_{launch} \times (150 \times U_{payload} \times P_{launch} - C_{launch,opex})
+\end{equation}
+
+Setting $\pi_{annual} = CAPEX$ and solving for $N_{launch}$:
+\begin{equation}
+N_{launch} = \frac{CAPEX}{150 \times U_{payload} \times P_{launch} - C_{launch,opex}}
+\end{equation}
+
+Using $C_{launch,opex} = US$200{,}000$ (midpoint of OPEX estimate), $U_{payload} = 0.7$, and $P_{launch} = $US$500/kg$:
+\begin{equation}
+\text{Denominator} = 150 \times 0.7 \times 500 - 200{,}000 = 52{,}500 - 200{,}000 = -147{,}500
+\end{equation}
+
+The denominator is negative, meaning that even at maximum utilization and price, each launch loses money under these assumptions. Therefore, no finite $N_{launch}$ can achieve payback; the venture would be perpetually loss-making.
+
+To break even on an operational basis (ignoring CAPEX), we require:
+\begin{equation}
+150 \times U_{payload} \times P_{launch} > C_{launch,opex}
+\end{equation}
+
+With $C_{launch,opex} = US$200{,}000$, this implies:
+\begin{equation}
+P_{launch} > \frac{200{,}000}{150 \times U_{payload}}
+\end{equation}
+
+For $U_{payload} = 0.7$, the break-even price is:
+\begin{equation}
+P_{launch} > \frac{200{,}000}{105} \approx US$1{,}905/kg
+\end{equation}
+
+Thus, to cover OPEX alone, the launch price must exceed approximately US$1,900/kg, far above the author-proposed US$500/kg.
+
+\subsubsection{Launch Price Sensitivity}
+If we fix the launch price at the author-proposed US$500/kg, we can solve for the required OPEX to break even operationally:
+\begin{equation}
+C_{launch,opex}^{max} = 150 \times U_{payload} \times 500
+\end{equation}
+
+For $U_{payload} = 0.7$, $C_{launch,opex}^{max} = 52{,}500$. This means that to break even (ignoring CAPEX), the OPEX per launch must be no more than US$52,500, which is significantly lower than our estimated range of US$100,000–300,000.
+
+\subsubsection{Cadence Sensitivity}
+Even if OPEX could be reduced to US$50,000 per launch (through unprecedented efficiency), the revenue per launch at US$500/kg and 150 kg payload is US$75,000, yielding a profit of US$25,000 per launch. To amortize a CAPEX of US$200 million would then require:
+\begin{equation}
+N_{launch} = \frac{200{,}000{,}000}{25{,}000} = 8{,}000  \text{launches/year}
+\end{equation}
+
+or over 20 launches per day, which is operationally infeasible for a system of this complexity.
+
+\subsubsection{Payload Utilization Sensitivity}
+If utilization drops to 50\%, the revenue per launch falls to US$37,500 (at US$500/kg), requiring even lower OPEX or higher price to remain viable.
+
+\subsubsection{Failure and Recovery Cost Sensitivity}
+Launch failures (vehicle loss) would increase effective CAPEX per successful launch. Assuming a failure rate $f$, the effective CAPEX per successful launch is $CAPEX / (1-f)$. For a 10\% failure rate, effective CAPEX increases by ~11\%. Recovery costs for the service module (if applicable) would add to OPEX per launch.
+
+\subsubsection{Dominant Assumptions and Consistency Check}
+The author-proposed targets appear mutually inconsistent under realistic assumptions. The dominant assumptions driving this inconsistency are:
+\begin{itemize}
+    \item \textbf{Overly optimistic launch price}: US$500/kg is below the estimated OPEX per kilogram for the system.
+    \item \item \item \textbf{Understated operational complexity}: The OPEX estimate of US$100,000–300,000 per launch may itself be optimistic given the need for precision station-keeping, gas handling, vacuum maintenance, and high-cadence launch operations.
+    \item \item \item \item \item \textbf{Insufficient launch cadence for capital recovery}: Even with optimistic revenue per launch, the CAPEX requires thousands of launches per year to pay back in one year.
+    \item \item \item \item \item \item \textbf{Lack of economies of scale}: The concept does not obviously benefit from the economies of scale seen in mature launch providers (e.g., SpaceX Falcon 9), which achieve lower costs through high flight rates and reusable hardware.
+\end{itemize}
+
+For the targets to be mutually consistent, at least one of the following must hold:
+\begin{itemize}
+    \item \item \item \textbf{The system achieves OPEX below US$50,000 per launch** through radical simplification or heritage technology, which contradicts the novelty of the subsystems.
+    \item \item \item \item \item \textbf{The launch price is increased to at least US$1,500–2,000/kg** to cover operational costs, eliminating the price advantage over conventional launch.
+    \item \item \item \item \item \item \textbf{The CAPEX is reduced to below US$50 million** through unprecedented cost savings, which is inconsistent with the cost breakdown of novel aerospace systems.
+    \item \item \item \item \item \item \textbf{The launch cadence reaches hundreds to thousands per year** through autonomous operation and minimal turnaround, which is implausible given the operational steps required (gas replenishment, vacuum pumping, inspection, etc.).
+\end{itemize}
+
+In conclusion, the author-proposed financial targets are not mutually consistent under realistic engineering and market assumptions. A responsible financial model would require revising the launch price upward, the CAPEX downward, or the cadence upward—or a combination thereof—to achieve viability. Until such revisions are validated through detailed cost estimating and market analysis, the proposed targets remain speculative.
+
+\subsection{Comparison to Conventional Launch Reference}
+The conventional launch reference of US$6,000/kg (US$900,000 per 150 kg launch) is consistent with historical data for small launch vehicles and rideshare options \cite{faa_launch_cost_survey}. At this price point, and assuming an OPEX of US$200,000 per launch, the profit per launch would be US$700,000, enabling more realistic payback scenarios with moderate launch cadence. However, achieving such a price would require the system to offer significant performance or operational advantages over existing providers, which remains to be demonstrated.
+\end{comment}\section{Preliminary Financial Model}
+\label{sec:financial}
+
+This section presents a transparent preliminary financial model for the modular stratospheric platform concept. The author-proposed targets—capital expenditure US$150–300 million, launch cost US$500/kg, conventional launch reference US$6,000/kg, and payback under one year—are critically evaluated as unverified hypotheses. All financial assumptions are explicit, and sensitivity analysis is performed to identify dominant drivers and assess mutual consistency.
+
+\subsection{Cost Structure and Capital Expenditure}
+The capital expenditure (CAPEX) encompasses development, manufacturing, deployment, and initial operational infrastructure. We break down the cost categories based on analogous aerospace and high-altitude systems.
+
+\subsubsection{Development and Engineering}
+Non-recurring engineering (NRE) includes system design, simulation, subscale testing, and prototype fabrication. For a novel integrated system combining aerostats, vacuum tubes, and hypersonic pneumatics, NRE could range from US$50–150 million, assuming significant technology maturation effort (similar to X-plane programs) \cite{nasa_cost_handbook}.
+
+\subsubsection{Manufacturing and Production}
+Recurring costs include aerostat modules, accelerator tube segments, vacuum systems, gas handling, control electronics, and launch infrastructure. Assuming a production run of 100 aerostat modules and 3 km of tube, material and fabrication costs may total US$30–80 million, depending on material choices (e.g., composites vs. aluminum) and economies of scale \cite{aerospace_cost_manual}.
+
+\subsubsection{Deployment and Integration}
+Deployment involves transporting components to the equatorial launch site, assembling the aerostat array, installing the accelerator tube, and integrating power and control systems. Deployment costs, including site preparation, permits, and initial fill of lifting gas, could add US$10–30 million \cite{faa_commercial_space}.
+
+\subsubsection{Initial Operational Spares and Support}
+Initial spares, ground support equipment, and training for operations staff may require US$5–20 million.
+
+\subsubsection{Total CAPEX Range}
+Summing the above categories yields a preliminary CAPEX estimate of US$95–280 million, which overlaps with the author-proposed range of US$150–300 million. The lower end assumes aggressive cost reductions and heritage technology, while the upper end reflects uncertainty in novel subsystems.
+
+\subsection{Operational Expenditure and Launch Cost}
+Operational expenditure (OPEX) per launch includes consumables, staffing, maintenance, payload integration, recovery, and insurance. We estimate OPEX to derive a realistic launch price.
+
+\subsubsection{Consumables per Launch}
+Consumables include lifting gas (hydrogen or helium) for buoyancy and make-up, propellant for the service module (if used), and any expendable thermal protection. For hydrogen at ~US$1–5/kg (production and liquefaction) and a typical usage of 500 kg per lift cycle, gas costs range US$500–2,500. Helium is significantly more expensive (~US$10–20/kg) but may be required for safety. Service module propellant (e.g., monopropellant hydrazine) at ~US$20–50/kg and a 10–20 kg budget adds US$200–1,000.
+
+\subsubsection{Staffing and Operations}
+A launch campaign requires personnel for aerostat station-keeping, tube monitoring, gas systems, launch control, and range safety. Assuming a team of 20 specialists at an average loaded cost of US$200,000/year (including benefits and overhead), and a launch cycle of 1 week (including preparation, launch, and reset), the staffing cost per launch is approximately:
+\begin{equation}
+C_{staff} = \frac{20 \times 200{,}000}{52} \approx US$77{,}000
+\end{equation}
+
+\subsubsection{Maintenance and Refurbishment}
+Between launches, the aerostat envelope may require inspection for UV damage, seam integrity, and gas leakage. The accelerator tube may need valve maintenance, seal replacement, and vacuum pump servicing. Assuming a maintenance effort equivalent to 10% of the CAPEX amortized over a expected flight rate (see Section \ref{subsec:utilization}), we model maintenance as a recurring cost.
+
+\subsubsection{Payload Integration and Recovery}
+Customer payload integration, including interface testing, environmental screening, and encapsulation, could cost US$5–20 per kilogram, or US$750–3,000 for a 150 kg payload. Recovery of the service module (if applicable) adds costs for telemetry, retrieval, and refurbishment (see Section \ref{sec:recovery}).
+
+\subsubsection{Insurance and Liability}
+Launch liability insurance for third-party damage is required. For suborbital or orbital launch ventures, premiums can range from 5–15% of the launch value \cite{space_insurance_survey}. Assuming a launch price of US$500/kg (US$75,000 per 150 kg launch), insurance might add US$3,750–11,250 per launch.
+
+\subsubsection{Total OPEX per Launch}
+Summing consumables, staffing, maintenance, integration, recovery, and insurance yields an estimated OPEX range of US$100,000–300,000 per launch. This translates to a cost of US$667–2,000 per kilogram for a 150 kg payload.
+
+\subsection{Revenue and Launch Price}
+Revenue per launch is determined by the launch price charged to customers. The author-proposed target of US$500/kg (US$75,000 per launch) is evaluated against the OPEX estimate above and the conventional launch reference of US$6,000/kg (US$900,000 per 150 kg launch) \cite{faa_launch_cost_survey}.
+
+If the OPEX is indeed US$100,000–300,000, then a price of US$75,000 would yield a gross margin of US$(75{,}000 - 200{,}000)$ to US$(75{,}000 - 100{,}000)$, which is negative at the higher OPEX estimate. Therefore, to achieve a positive margin, either OPEX must be reduced below US$75,000 or the launch price must be increased.
+
+\subsection{Utilization and Annual Throughput}
+The annual revenue depends on the launch cadence and payload utilization. We define:
+\begin{itemize}
+    \item \textbf{Launches per year ($N_{launch}$)}: Number of successful launch cycles per year.
+    \item \item \item \textbf{Payload utilization factor ($U_{payload}$)}: Fraction of the 150 kg payload capacity actually sold and flown (accounting for customer demand, manifest efficiency, and potential flyweight).
+\end{itemize}
+
+The annual throughput in kilograms is:
+\begin{equation}
+M_{annual} = N_{launch} \times 150  \text{kg} \times U_{payload}
+\end{equation}
+
+Annual revenue is:
+\begin{equation}
+R_{annual} = N_{launch} \times 150  \text{kg} \times U_{payload} \times P_{launch}
+\end{equation}
+where $P_{launch}$ is the launch price per kilogram.
+
+Assuming a target of $P_{launch} = $US$500/kg$, and exploring plausible values:
+\begin{itemize}
+    \item \textbf{Conservative scenario}: $N_{launch} = 6$ launches/year (every two months), $U_{payload} = 0.5$ (50\% utilization), then $M_{annual} = 6 \times 150 \times 0.5 = 450$ kg/year, and $R_{annual} = 450 \times 500 = US$225,000/year.
+    \item \item \item \textbf{Moderate scenario}: $N_{launch} = 12$ launches/year (monthly), $U_{payload} = 0.7$, then $M_{annual} = 12 \times 150 \times 0.7 = 1,260$ kg/year, $R_{annual} = 1,260 \times 500 = US$630,000/year.
+    \item \item \item \textbf{Optimistic scenario}: $N_{launch} = 24$ launches/year (twice monthly), $U_{payload} = 0.9$, then $M_{annual} = 24 \times 150 \times 0.9 = 3,240$ kg/year, $R_{annual} = 3,240 \times 500 = US$1,620,000/year.
+\end{itemize}
+
+Even the optimistic scenario yields only US$1.62 million in annual revenue, far below the CAPEX of US$150–300 million. Therefore, a payback period under one year would require either:
+\begin{itemize}
+    \item \item \item \textbf{Extremely high launch cadence}: $N_{launch} > 200$ launches/year (more than every other day) with high utilization, which is implausible given the operational complexity of the system.
+    \item \item \item \textbf{Substantial price increase}: $P_{launch} > $US$3,000/kg to reach US$5–9 million annual revenue in the optimistic scenario, still insufficient for rapid payback.
+    \item \item \item \item \item \item \textbf{Massive reduction in CAPEX}: CAPEX below US$50 million, which contradicts the author-proposed range and the cost breakdown above.
+\end{itemize}
+
+\subsection{Sensitivity Analysis}
+We perform a sensitivity analysis on key parameters to identify dominant assumptions and test the mutual consistency of the author-proposed targets.
+
+\subsubsection{Capital Cost Sensitivity}
+If CAPEX is fixed at US$200 million (midpoint of author-proposed range), the required annual net cash flow for a one-year payback (ignoring time value of money) is US$200 million. Assuming a simple profit model where annual profit = annual revenue – annual OPEX (excluding CAPEX amortization), we solve for required launch cadence and price.
+
+Let $C_{launch,opex}$ be the OPEX per launch in dollars. Then annual profit is:
+\begin{equation}
+\pi_{annual} = N_{launch} \times (150 \times U_{payload} \times P_{launch} - C_{launch,opex})
+\end{equation}
+
+Setting $\pi_{annual} = CAPEX$ and solving for $N_{launch}$:
+\begin{equation}
+N_{launch} = \frac{CAPEX}{150 \times U_{payload} \times P_{launch} - C_{launch,opex}}
+\end{equation}
+
+Using $C_{launch,opex} = US$200{,}000$ (midpoint of OPEX estimate), $U_{payload} = 0.7$, and $P_{launch} = $US$500/kg$:
+\begin{equation}
+\text{Denominator} = 150 \times 0.7 \times 500 - 200{,}000 = 52{,}500 - 200{,}000 = -147{,}500
+\end{equation}
+
+The denominator is negative, meaning that even at maximum utilization and price, each launch loses money under these assumptions. Therefore, no finite $N_{launch}$ can achieve payback; the venture would be perpetually loss-making.
+
+To break even on an operational basis (ignoring CAPEX), we require:
+\begin{equation}
+150 \times U_{payload} \times P_{launch} > C_{launch,opex}
+\end{equation}
+
+With $C_{launch,opex} = US$200{,}000$, this implies:
+\begin{equation}
+P_{launch} > \frac{200{,}000}{150 \times U_{payload}}
+\end{equation}
+
+For $U_{payload} = 0.7$, the break-even price is:
+\begin{equation}
+P_{launch} > \frac{200{,}000}{105} \approx US$1{,}905/kg
+\end{equation}
+
+Thus, to cover OPEX alone, the launch price must exceed approximately US$1,900/kg, far above the author-proposed US$500/kg.
+
+\subsubsection{Launch Price Sensitivity}
+If we fix the launch price at the author-proposed US$500/kg, we can solve for the required OPEX to break even operationally:
+\begin{equation}
+C_{launch,opex}^{max} = 150 \times U_{payload} \times 500
+\end{equation}
+
+For $U_{payload} = 0.7$, $C_{launch,opex}^{max} = 52{,}500$. This means that to break even (ignoring CAPEX), the OPEX per launch must be no more than US$52,500, which is significantly lower than our estimated range of US$100,000–300,000.
+
+\subsubsection{Cadence Sensitivity}
+Even if OPEX could be reduced to US$50,000 per launch (through unprecedented efficiency), the revenue per launch at US$500/kg and 150 kg payload is US$75,000, yielding a profit of US$25,000 per launch. To amortize a CAPEX of US$200 million would then require:
+\begin{equation}
+N_{launch} = \frac{200{,}000{,}000}{25{,}000} = 8{,}000  \text{launches/year}
+\end{equation}
+
+or over 20 launches per day, which is operationally infeasible for a system of this complexity.
+
+\subsubsection{Payload Utilization Sensitivity}
+If utilization drops to 50\%, the revenue per launch falls to US$37,500 (at US$500/kg), requiring even lower OPEX or higher price to remain viable.
+
+\subsubsection{Failure and Recovery Cost Sensitivity}
+Launch failures (vehicle loss) would increase effective CAPEX per successful launch. Assuming a failure rate $f$, the effective CAPEX per successful launch is $CAPEX / (1-f)$. For a 10\% failure rate, effective CAPEX increases by ~11\%. Recovery costs for the service module (if applicable) would add to OPEX per launch.
+
+\subsubsection{Dominant Assumptions and Consistency Check}
+The author-proposed targets appear mutually inconsistent under realistic assumptions. The dominant assumptions driving this inconsistency are:
+\begin{itemize}
+    \item \textbf{Overly optimistic launch price}: US$500/kg is below the estimated OPEX per kilogram for the system.
+    \item \item \item \textbf{Understated operational complexity}: The OPEX estimate of US$100,000–300,000 per launch may itself be optimistic given the need for precision station-keeping, gas handling, vacuum maintenance, and high-cadence launch operations.
+    \item \item \item \item \item \textbf{Insufficient launch cadence for capital recovery}: Even with optimistic revenue per launch, the CAPEX requires thousands of launches per year to pay back in one year.
+    \item \item \item \item \item \item \textbf{Lack of economies of scale}: The concept does not obviously benefit from the economies of scale seen in mature launch providers (e.g., SpaceX Falcon 9), which achieve lower costs through high flight rates and reusable hardware.
+\end{itemize}
+
+For the targets to be mutually consistent, at least one of the following must hold:
+\begin{itemize}
+    \item \item \item \textbf{The system achieves OPEX below US$50,000 per launch** through radical simplification or heritage technology, which contradicts the novelty of the subsystems.
+    \item \item \item \item \item \textbf{The launch price is increased to at least US$1,500–2,000/kg** to cover operational costs, eliminating the price advantage over conventional launch.
+    \item \item \item \item \item \item \textbf{The CAPEX is reduced to below US$50 million** through unprecedented cost savings, which is inconsistent with the cost breakdown of novel aerospace systems.
+    \item \item \item \item \item \item \textbf{The launch cadence reaches hundreds to thousands per year** through autonomous operation and minimal turnaround, which is implausible given the operational steps required (gas replenishment, vacuum pumping, inspection, etc.).
+\end{itemize}
+
+In conclusion, the author-proposed financial targets are not mutually consistent under realistic engineering and market assumptions. A responsible financial model would require revising the launch price upward, the CAPEX downward, or the cadence upward—or a combination thereof—to achieve viability. Until such revisions are validated through detailed cost estimating and market analysis, the proposed targets remain speculative.
+
+\subsection{Comparison to Conventional Launch Reference}
+The conventional launch reference of US$6,000/kg (US$900,000 per 150 kg launch) is consistent with historical data for small launch vehicles and rideshare options \cite{faa_launch_cost_survey}. At this price point, and assuming an OPEX of US$200,000 per launch, the profit per launch would be US$700,000, enabling more realistic payback scenarios with moderate launch cadence. However, achieving such a price would require the system to offer significant performance or operational advantages over existing providers, which remains to be demonstrated.
+\end{comment}\section{Conclusion}
 \label{sec:conclusion}
 
 The modular stratospheric platform based on hybrid aerostats for equatorial horizontal pneumatic launch of nanosatellites presents an intriguing concept that leverages established principles from multiple aerospace disciplines. However, significant uncertainties remain regarding its practical realization. The proposed parameters—40-50 km altitude, 2.7-3.0 km accelerator length, 150 kg payload, 7.3 km/s exit velocity, and 1,000 g acceleration—are engineering hypotheses that must be validated through rigorous physics-based modeling, subscale experimentation, and integrated systems testing.
