@@ -19,11 +19,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Set up TeX Live and Compile LaTeX document
+    - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
       with:
+        working_directory: articles
         run: |
-          cd articles
           latexmk -pdf -interaction=nonstopmode main.tex
       
     - name: Upload PDF as artifact
