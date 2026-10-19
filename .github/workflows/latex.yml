@@ -31,12 +31,14 @@ jobs:
           latexmk -pdf -interaction=nonstopmode main.tex
       
     - name: Save LaTeX log
+      if: always()
       run: |
         if [ -f articles/main.log ]; then
           cp articles/main.log ./latexmk.log
         fi
       
     - name: Upload LaTeX log as artifact
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: latexmk-log
@@ -44,6 +46,7 @@ jobs:
         retention-days: 1
       
     - name: Upload PDF as artifact
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: main-pdf
@@ -51,6 +54,7 @@ jobs:
         retention-days: 30
       
     - name: Create or update compiled-pdf branch
+      if: always()
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.githubusercontent.com"
