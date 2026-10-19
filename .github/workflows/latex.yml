@@ -19,6 +19,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
+    - name: Install additional LaTeX packages
+      run: |
+        tlmgr install geometry booktabs siunitx hyperref amsfonts amssymb amsmath braket mathtools enumitem || true
+      
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
       with:
