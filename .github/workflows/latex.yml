@@ -30,6 +30,19 @@ jobs:
           cd articles
           latexmk -pdf -interaction=nonstopmode main.tex
       
+    - name: Save LaTeX log
+      run: |
+        if [ -f articles/main.log ]; then
+          cp articles/main.log ./latexmk.log
+        fi
+      
+    - name: Upload LaTeX log as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: latexmk-log
+        path: ./latexmk.log
+        retention-days: 1
+      
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
       with:
