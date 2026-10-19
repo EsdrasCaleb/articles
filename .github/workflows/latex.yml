@@ -2,10 +2,6 @@ name: Compile LaTeX Document
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'articles/**'
-      - '.github/workflows/latex.yml'
   workflow_dispatch:
 
 jobs:
