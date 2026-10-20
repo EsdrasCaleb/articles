@@ -59,8 +59,10 @@ jobs:
       with:
         run: |
           # Ensure the latest file is used
-          git pull origin main
-          xelatex -interaction=nonstopmode pneumatic.tex
+          git fetch origin main
+          git reset --hard origin/main
+          rm -f pneumatic.pdf pneumatic.log
+          xelatex -interaction=nonstopmode -file-line-error -halt-on-error pneumatic.tex
     
     - name: Save LaTeX log
       if: always()
