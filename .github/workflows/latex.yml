@@ -21,7 +21,7 @@ jobs:
       
     - name: Install additional LaTeX packages
       run: |
-        tlmgr install geometry booktabs siunitx hyperref amsmath amsfonts amssymb graphicx enumitem || true
+        tlmgr install geometry booktabs siunitx hyperref amsmath amsfonts amssymb graphicx enumitem microtype parskip setspace floatflt wrapfig || true
       
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
