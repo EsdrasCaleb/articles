@@ -21,7 +21,27 @@ jobs:
     
     - name: Install additional LaTeX packages
       run: |
-        tlmgr install geometry booktabs siunitx hyperref amsmath amsfonts amssymb graphicx enumitem microtype parskip setspace floatflt wrapfig bm mathrsfs amsthm tikz xcolor || true
+        sudo tlmgr install --file=texlive.packages
+        cat << 'EOF' > texlive.packages
+        geometry
+        booktabs
+        siunitx
+        hyperref
+        amsmath
+        amssymb
+        graphicx
+        enumitem
+        microtype
+        parskip
+        setspace
+        floatflt
+        wrapfig
+        bm
+        mathrsfs
+        amsthm
+        tikz
+        xcolor
+        EOF
     
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
