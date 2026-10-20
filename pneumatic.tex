@@ -5,21 +5,21 @@
 We begin with a quantitative analysis of the pneumatic accelerator using the proposed preliminary targets: payload mass $m_p = 150$ kg, accelerator length $L = 2.7-3.0$ km, exit speed relative to the platform $v_{exit} = 7.3$ km/s, and nominal acceleration ceiling $a_{max} = 1,000$ g = 9,800 m/s$^2$.
 
 Assuming the platform starts from rest relative to itself ($v_0 = 0$) and undergoes constant acceleration, we apply the kinematic equation:
-\begin{equation}
+egin{equation}
 v_f^2 = v_0^2 + 2aL
 \end{equation}
 Solving for acceleration:
-\begin{equation}
+egin{equation}
 a = \frac{v_f^2}{2L}
 \end{equation}
 
 For the minimum length case ($L = 2.7$ km):
-\begin{equation}
+egin{equation}
 a = \frac{(7300  \text{m/s})^2}{2 \times 2700  \text{m}} = \frac{53,290,000}{5400} \approx 9,868.5  \text{m/s}^2 \approx 1,007  g
 \end{equation}
 
 For the maximum length case ($L = 3.0$ km):
-\begin{equation}
+egin{equation}
 a = \frac{(7300  \text{m/s})^2}{2 \times 3000  \text{m}} = \frac{53,290,000}{6000} \approx 8,881.7  \text{m/s}^2 \approx 906  g
 \end{equation}
 
@@ -27,41 +27,41 @@ Thus, to achieve 7.3 km/s over 2.7-3.0 km requires an acceleration of approximat
 
 \subsubsection{Transit Time}
 Under constant acceleration, transit time is given by:
-\begin{equation}
+egin{equation}
 t = \frac{v_f - v_0}{a} = \frac{v_f}{a}
 \end{equation}
 
 Using the average acceleration of 950 g (9,310 m/s$^2$):
-\begin{equation}
+egin{equation}
 t = \frac{7300  \text{m/s}}{9310  \text{m/s}^2} \approx 0.784  \text{s}
 \end{equation}
 The payload would transit the accelerator in approximately 0.78 seconds.
 
 \subsubsection{Payload Force}
 The force required to accelerate the payload is:
-\begin{equation}
+egin{equation}
 F = m_p a
 \end{equation}
 Using the average acceleration:
-\begin{equation}
+egin{equation}
 F = 150  \text{kg} \times 9310  \text{m/s}^2 \approx 1,396,500  \text{N} \approx 1.40  \text{MN}
 \end{equation}
 
 \subsubsection{Kinetic Energy}
 The kinetic energy imparted to the payload is:
-\begin{equation}
+egin{equation}
 E_k = \frac{1}{2} m_p v_f^2
 \end{equation}
-\begin{equation}
+egin{equation}
 E_k = \frac{1}{2} \times 150  \text{kg} \times (7300  \text{m/s})^2 = 75 \times 53,290,000 \approx 3.997 \times 10^9  \text{J} \approx 4.00  \text{GJ}
 \end{equation}
 
 \subsubsection{Required Average Power}
 The average power required during the acceleration period is:
-\begin{equation}
+egin{equation}
 P_{avg} = \frac{E_k}{t}
 \end{equation}
-\begin{equation}
+egin{equation}
 P_{avg} = \frac{3.997 \times 10^9  \text{J}}{0.784  \text{s}} \approx 5.10 \times 10^9  \text{W} \approx 5.10  \text{GW}
 \end{equation}
 
@@ -76,7 +76,7 @@ All equations used are dimensionally consistent:
 
 \subsection{Ideal Lower Bounds vs. Real System Requirements}
 The calculations above represent ideal lower bounds assuming:
-\begin{itemize}
+egin{itemize}
     \item Perfect constant acceleration
     \item No mass of driving piston or gas column
     \item No thermal losses during gas expansion
@@ -86,7 +86,7 @@ The calculations above represent ideal lower bounds assuming:
 \end{itemize}
 
 Real system requirements will exceed these ideals due to:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Driving system mass}: The piston and gas column must also be accelerated
     \item \textbf{Gas compression work}: Energy required to pressurize the working gas
     \item \textbf{Thermal losses}: Heat transfer to tube walls during expansion
@@ -102,7 +102,7 @@ The concept proposes using sequential injection of heated, pressurized oxygen (o
 
 \subsubsection{Pressure and Temperature Requirements}
 To accelerate the payload to 7.3 km/s over 3 km at an average acceleration of 950 g requires a net average force of approximately 1.40 MN. Assuming a piston area of 0.5 m\textsuperscript{2} (diameter ~0.8 m), the required average pressure is:
-\begin{equation}
+egin{equation}
 P_{avg} = \frac{F}{A} = \frac{1.40 \times 10^6  \text{N}}{0.5  \text{m}^2} = 2.80  \text{MPa}
 \end{equation}
 However, pressure must vary along the tube to maintain constant acceleration as the expelled gas column grows. The pressure at the breach (payload end) must be highest and decrease toward the gas source.
@@ -111,7 +111,7 @@ Using ideal gas law considerations and assuming the gas is heated to reduce dens
 
 \subsubsection{Gas Expansion and Valve Response}
 As the working gas expands to fill the increasing volume behind the piston, its pressure and temperature drop. To maintain constant acceleration, either:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Increasing mass flow rate}: Continuously injecting more gas at high pressure
     \item \textbf{Increasing injection temperature}: Heating the gas to higher temperatures as it expands
     \item \textbf{Variable geometry injection}: Changing the injection area or valve timing
@@ -120,25 +120,25 @@ Valve response times must be on the order of milliseconds to track the rapidly c
 
 \subsubsection{Pressure-Vessel Mass}
 Storing the required working gas mass at high pressure demands significant pressure-vessel mass. For oxygen at 10 MPa and 300 K, the density is approximately 12 kg/m\textsuperscript{3}. To accelerate a 150 kg payload to 7.3 km/s requires momentum of:
-\begin{equation}
+egin{equation}
 p = m_p v_f = 150  \text{kg} \times 7300  \text{m/s} = 1.095 \times 10^6  \text{kg·m/s}
 \end{equation}
 Assuming an effective exhaust velocity of 2.0 km/s for the gas (considering heating and expansion losses), the required propellant mass is:
-\begin{equation}
+egin{equation}
 m_{prop} = \frac{p}{v_{ex}} = \frac{1.095 \times 10^6}{2000} \approx 547.5  \text{kg}
 \end{equation}
 The tankage mass for storing 547.5 kg of oxygen at 10 MPa would be substantial, likely exceeding 20\% of the propellant mass for composite overwrapped pressure vessels (COPVs), adding significant inert mass to the system.
 
 \subsubsection{Thermal Limits and Tube Integrity}
 Heating oxygen to 1,500 K results in significant thermal radiation and convective heat transfer to the accelerator tube walls. For a tube of 0.5 m diameter and 3 km length, the internal surface area is approximately:
-\begin{equation}
+egin{equation}
 A = \pi D L = \pi \times 0.5  \text{m} \times 3000  \text{m} \approx 4,712  \text{m}^2
 \end{equation}
 Even with reflective coatings, heat fluxes of 10-50 kW/m\textsuperscript{2} would require active cooling or specialized high-temperature materials to prevent creep, oxidation, or loss of strength.
 
 \subsubsection{Gas-Payload Interaction and Momentum Transfer}
 Efficient momentum transfer requires the driving gas to remain coupled to the piston without significant slip or turbulence. Challenges include:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Blowby}: Gas leaking past piston seals
     \item \textbf{Choking}: Flow restrictions at the piston interface
     \item \textbf{Unsteady forces}: Pressure oscillations causing vibrations
@@ -148,11 +148,11 @@ Seal design must accommodate thermal cycling, pressure differentials, and potent
 
 \subsubsection{Efficiency Considerations}
 The overall system efficiency $\eta_{sys}$ can be factored as:
-\begin{equation}
+egin{equation}
 \eta_{sys} = \eta_{comp} \times \eta_{heat} \times \eta_{valve} \times \eta_{flow} \times \eta_{mech} \times \eta_{rec}
 \end{equation}
 where:
-\begin{itemize}
+egin{itemize}
     \item $\eta_{comp}$: Gas compression efficiency (typically 60-80\% for multi-stage)
     \item $\eta_{heat}$: Heat transfer efficiency to gas (limited by material properties)
     \item $\eta_{valve}$: Valve flow efficiency (pressure losses across valves)
@@ -167,7 +167,7 @@ While oxygen was proposed in the prompt, other working fluids merit consideratio
 
 \subsubsection{Hydrogen}
 Hydrogen offers the highest specific impulse due to its low molecular weight, but introduces:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Extreme permeability}: Requires specialized containment
     \item \textbf{Flammability}: Wide flammability range in oxygen-containing environments
     \item \textbf{Embrittlement}: Risk of hydrogen embrittlement in high-strength steels
@@ -176,7 +176,7 @@ Hydrogen offers the highest specific impulse due to its low molecular weight, bu
 
 \subsubsection{Helium}
 Helium provides good specific impulse with inertness, but:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Cost and scarcity}: Non-renewable resource with extraction challenges
     \item \textbf{Permeability**: Higher than heavier gases due to small atomic size
     \item \textbf{Sound speed**: High speed of sound may complicate wave dynamics in the tube
@@ -184,7 +184,7 @@ Helium provides good specific impulse with inertness, but:
 
 \subsubsection{Nitrogen}
 Nitrogen offers a compromise:
-\begin{itemize}
+egin{itemize}
     \item \textbf{Inertness**: Non-flammable in most conditions
     \item \textbf{Availability**: Major component of air, relatively low cost
     \item \textbf{Moderate molecular weight**: Better specific impulse than heavier gases
@@ -195,7 +195,7 @@ Nitrogen offers a compromise:
 Electromagnetic launchers (railguns, coilguns) offer an alternative approach to kinetic energy storage:
 
 \subsubsection{Advantages of Electromagnetic Systems}
-\begin{itemize}
+egin{itemize}
     \item \textbf{No propellant}: Eliminates gas handling, storage, and effusion complexities
     \item \textbf{Potential for higher efficiency**: Theoretical efficiencies exceeding 50\% have been demonstrated
     \item \textbf{Precise control**: Current timing allows fine control of acceleration profile
@@ -203,7 +203,7 @@ Electromagnetic launchers (railguns, coilguns) offer an alternative approach to 
 \end{itemize}
 
 \subsubsection{Challenges of Electromagnetic Systems}
-\begin{itemize}
+egin{itemize}
     \item \textbf{High peak power}: Requires enormous instantaneous power delivery (10s-100s of GW)
     \item \textbf{Electromagnetic launch effects}: Plasma armature erosion, nozzle ablation
     \item \textbf{Structural forces}: Lorentz forces on launcher structure
@@ -217,7 +217,7 @@ For the stratospheric platform concept, electromagnetic acceleration would elimi
 Based on the quantitative analysis, we assess the physical plausibility of the horizontal pneumatic accelerator concept:
 
 \subsubsection{Supported by Established Physics}
-\begin{itemize}
+egin{itemize}
     \item \textbf{Kinematics}: The relationships $v^2 = v_0^2 + 2aL$ and $F = ma$ are well-established
     \item \textbf{Energy conservation}: The kinetic energy calculation $\frac{1}{2}mv^2$ is fundamental
     \item \textbf{Ideal gas law}: PV = nRT governs gas behavior under ideal conditions
@@ -225,7 +225,7 @@ Based on the quantitative analysis, we assess the physical plausibility of the h
 \end{itemize}
 
 \subsubsection{Engineering Estimates Requiring Validation}
-\begin{itemize}
+egin{itemize}
     \item \textbf{Required pressures and temperatures}: Based on gas dynamics but need CFD validation
     \item \textbf{Material thermal limits}: Requires high-temperature testing of candidate materials
     \item \textbf{Valve response and flow characteristics}: Needs experimental validation at scale
@@ -234,7 +234,7 @@ Based on the quantitative analysis, we assess the physical plausibility of the h
 \end{itemize}
 
 \subsubsection{Speculation Requiring Dedicated Research}
-\begin{itemize}
+egin{itemize}
     \item \textbf{Multi-kilometer valve coordination}: No evidence of precise, synchronized valve control over 3 km
     \item \textbf{Thermal management at scale}: No demonstration of active cooling for 3 km of hot gas tube
     \item \textbf{Payload sealing and guidance}: No validation of hypersonic piston seals in evacuated tubes
