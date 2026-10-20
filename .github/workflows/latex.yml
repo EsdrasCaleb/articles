@@ -27,14 +27,13 @@ jobs:
       uses: xu-cheng/texlive-action@v3
       with:
         run: |
-          cd articles
           latexmk -pdf -interaction=nonstopmode main.tex
       
     - name: Save LaTeX log
       if: always()
       run: |
-        if [ -f articles/main.log ]; then
-          cp articles/main.log ./latexmk.log
+        if [ -f main.log ]; then
+          cp main.log ./latexmk.log
         fi
       
     - name: Upload LaTeX log as artifact
@@ -50,7 +49,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: main-pdf
-        path: articles/main.pdf
+        path: main.pdf
         retention-days: 30
       
     - name: Create or update compiled-pdf branch
@@ -59,18 +58,26 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.githubusercontent.com"
         
+        # Configure git to allow pushing
+        git config --global push.default simple
+        
         # Check if compiled-pdf branch exists
         if git show-ref --verify --quiet refs/heads/compiled-pdf; then
+          # Branch exists, update it
           git checkout compiled-pdf
-          git rm -f articles/main.pdf || true
-          git checkout main -- articles/main.pdf
+          git rm -f main.pdf || true
+          git checkout main -- main.pdf
         else
+          # Branch doesn't exist, create it
           git checkout -b compiled-pdf
+          # Remove everything first to start clean
           git rm -rf . || true
-          git checkout main -- articles/main.pdf
+          # Checkout the PDF from main branch
+          git checkout main -- main.pdf
           git checkout main -- .gitignore || true
         fi
         
-        git add articles/main.pdf
+        # Add and commit the PDF
+        git add main.pdf
         git commit -m "Update compiled PDF: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
         git push origin compiled-pdf
