@@ -56,7 +56,7 @@ jobs:
         run: |
           # Ensure the latest file is used
           git pull origin main
-          latexmk -pdf -interaction=nonstopmode -f pneumatic.tex
+          xelatex -interaction=nonstopmode pneumatic.tex
     
     - name: Save LaTeX log
       if: always()
