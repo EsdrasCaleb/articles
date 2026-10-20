@@ -18,6 +18,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Clean workspace
+      run: |
+        rm -rf pneumatic.pdf pneumatic.log
+        rm -f texlive.packages
     
     - name: Install additional LaTeX packages
       run: |
@@ -48,7 +54,9 @@ jobs:
       uses: xu-cheng/texlive-action@v3
       with:
         run: |
-          latexmk -pdf -interaction=nonstopmode pneumatic.tex
+          # Ensure the latest file is used
+          git pull origin main
+          latexmk -pdf -interaction=nonstopmode -f pneumatic.tex
     
     - name: Save LaTeX log
       if: always()
