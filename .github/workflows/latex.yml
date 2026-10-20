@@ -31,15 +31,22 @@ jobs:
         sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-latex-recommended texlive-pictures texlive-science lmodern dvipng
     
     - name: Compile LaTeX document
-      uses: xu-cheng/texlive-action@v3
-      with:
-        run: |
-          # Ensure the latest file is used
-          git fetch origin main
-          git reset --hard origin/main
-          git clean -fd
-          rm -f pneumatic.pdf pneumatic.log
-          xelatex -interaction=nonstopmode -file-line-error -halt-on-error pneumatic.tex
+      run: |
+        # Ensure the latest file is used
+        git fetch origin main
+        git reset --hard origin/main
+        git clean -fd
+        rm -f pneumatic.pdf pneumatic.log
+        # Install additional packages if needed
+        sudo apt-get install -y --no-install-recommends texlive-fonts-extra
+        # Compile with xelatex
+        xelatex -interaction=nonstopmode -file-line-error -halt-on-error pneumatic.tex
+        # Check if the PDF was generated
+        if [ ! -f pneumatic.pdf ]; then
+          echo "Failed to generate PDF. Check the log for errors."
+          cat pneumatic.log
+          exit 1
+        fi
     
     - name: Save LaTeX log
       if: always()
