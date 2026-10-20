@@ -1,0 +1,51 @@
+name: Compile LaTeX Document
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Compile LaTeX document
+      uses: xu-cheng/texlive-action@v3
+      with:
+        working_directory: articles
+        run: |
+          latexmk -pdf -interaction=nonstopmode main.tex
+      
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: main-pdf
+        path: articles/main.pdf
+        retention-days: 30
+      
+    - name: Create or update compiled-pdf branch
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.githubusercontent.com"
+        
+        # Check if compiled-pdf branch exists
+        if git show-ref --verify --quiet refs/heads/compiled-pdf; then
+          git checkout compiled-pdf
+          git rm -f articles/main.pdf || true
+          git checkout main -- articles/main.pdf
+        else
+          git checkout -b compiled-pdf
+          git rm -rf . || true
+          git checkout main -- articles/main.pdf
+          git checkout main -- .gitignore || true
+        fi
+        
+        git add articles/main.pdf
+        git commit -m "Update compiled PDF: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
+        git push origin compiled-pdf
