@@ -21,6 +21,7 @@ jobs:
     
     - name: Install additional LaTeX packages
       run: |
+        sudo rm -f texlive.packages
         cat << 'EOF' > texlive.packages
         geometry
         booktabs
@@ -41,7 +42,7 @@ jobs:
         tikz
         xcolor
         EOF
-        sudo tlmgr install --file=texlive.packages
+        sudo tlmgr install --file=texlive.packages --reinstall
     
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
