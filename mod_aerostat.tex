@@ -6,28 +6,30 @@ The operational environment for the proposed platform is the equatorial stratosp
 \begin{itemize}
     \item \textbf{Temperature}: Approximately 250-270 K (-23 to -3\textdegree{}C), with minimal diurnal variation
     \item \textbf{Pressure}: 2.7-0.9 kPa (27-9 mbar), approximately 2.7-0.9\% of sea level pressure
-    \item \textbf{Density}: 0.3-0.01 kg/m\textsuperscript{3}, approximately 2.5-0.08\% of sea level density
+    \item \textbf{Density}: 0.3-0.01 kg/m$^3$, approximately 2.5-0.08\% of sea level density
     \item \textbf{Wind speeds}: Typically 10-30 m/s in the equatorial stratosphere, with occasional jet streams exceeding 50 m/s \cite{holton2004}
     \item \textbf{UV radiation}: Significant increase due to reduced ozone absorption; UV index can exceed 15 \cite{blumthaler1997}
 \end{itemize}
 These conditions present both opportunities and challenges. The low density reduces aerodynamic drag on the platform and minimizes buoyant gas requirements for lift, while the cold temperatures affect material brittleness and the high UV flux accelerates polymer degradation.
 
 \subsection{Buoyancy and Lifting Gas Analysis}
-The buoyant force available to support the platform structure and payload is given by Archimedes' principle: $F_b = \rho_{air} V g - \rho_{gas} V g$, where $\rho_{air}$ and $\rho_{gas}$ are the densities of ambient air and lifting gas, $V$ is the displaced volume, and $g$ is gravitational acceleration. Using hydrogen ($\rho_{H2} \approx 0.08$ kg/m\textsuperscript{3} at STP, adjusted for altitude) or helium ($\rho_{He} \approx 0.16$ kg/m\textsuperscript{3}) in the stratospheric environment:
+The buoyant force available to support the platform structure and payload is given by Archimedes' principle: $F_b = \rho_{air} V g - \rho_{gas} V g$, where $\rho_{air}$ and $\rho_{gas}$ are the densities of ambient air and lifting gas, $V$ is the displaced volume, and $g$ is gravitational acceleration. Using hydrogen ($\
+ho_{H2} \approx 0.08$ kg/m$^3$ at STP, adjusted for altitude) or helium ($\
+ho_{He} \approx 0.16$ kg/m$^3$) in the stratospheric environment:
 
 \subsubsection{Hydrogen Lifting Gas}
 At 45 km altitude ($\rho_{air} \approx 0.1$ kg/m\textsuperscript{3}), hydrogen provides:
 \begin{equation}
 F_b/V = g(\rho_{air} - \rho_{H2}) \approx 9.81 \times (0.1 - 0.008) \approx 0.896  \text{N/m}\textsuperscript{3}
 \end{equation}
-This represents the net buoyant force per cubic meter of available lift. For comparison, helium provides approximately 0.804 N/m\textsuperscript{3} under the same conditions.
+This represents the net buoyant force per cubic meter of available lift. For comparison, helium provides approximately 0.804 N/m$^3$ under the same conditions.
 
 Hydrogen offers approximately 11.5\% greater lift than helium but introduces significant hazards:
 \begin{itemize}
     \item \textbf{Leakage}: Hydrogen's small molecular size (2.89 pm kinetic diameter) results in elevated permeability through many polymers \cite{sakurai2010}
     \item \textbf{Containment}: Requires multilayer barrier materials or metallic liners for long-term storage
     \item \textbf{Fire/Explosion Hazard}: Wide flammability range (4-75\% in air) and low ignition energy (0.02 mJ) \cite{zalkind2015}
-    \item \textbf{Production Assumptions}: The concept often assumes in-situ electrolysis of water, but this ignores the substantial energy requirements (~9 kWh/Nm\textsuperscript{3} H\textsubscript{2}) and need for water supply at altitude
+    \item \textbf{Production Assumptions}: The concept often assumes in-situ electrolysis of water, but this ignores the substantial energy requirements (~9 kWh/Nm$^3$ H$_{2}$) and need for water supply at altitude
 \end{itemize}
 
 \subsubsection{Helium Alternative}
@@ -43,7 +45,7 @@ Materials like fluorosilicone (FSI) offer excellent resistance to UV degradation
 Kevlar provides exceptional tensile strength (3.6 GPa) and is commonly used in aerostat load cables and reinforcement fabrics \cite{morgan2005}. It maintains strength at low temperatures and has good UV resistance when coated. However, Kevlar absorbs moisture (up to 4.5\%), which can freeze and degrade performance, and it undergoes compressive creep under sustained load \cite{morga2001}.
 
 \subsubsection{Dyneema\textsuperscript{®} (UHMWPE)}
-Ultra-high-molecular-weight polyethylene (UHMWPE) offers the highest specific strength of any commercial fiber (specific strength ~3.6\times 10\textsuperscript{6} m\textsuperscript{2}/s\textsuperscript{2}) and excellent chemical resistance \cite{gouella2008}. It has low temperature embrittlement resistance but poor UV stability without significant additives and exhibits significant creep under sustained load \cite{white2014}.
+Ultra-high-molecular-weight polyethylene (UHMWPE) offers the highest specific strength of any commercial fiber (specific strength ~3.6\times 10$^6$ m$^2$/s$^2$) and excellent chemical resistance \cite{gouella2008}. It has low temperature embrittlement resistance but poor UV stability without significant additives and exhibits significant creep under sustained load \cite{white2014}.
 
 \subsubsection{Material Degradation Mechanisms}
 Critical degradation pathways at 40-50 km altitude include:
@@ -65,7 +67,7 @@ For a 3 km horizontal accelerator, even small misalignments between modules can 
 where $\delta$ is the allowable lateral deviation per segment and $L_{seg}$ is the segment length. Maintaining this tolerance requires precision coupling mechanisms and active alignment systems.
 
 \subsubsection{Thermal Expansion and Contraction}
-Diurnal temperature cycles at altitude can exceed 30 K. For a 50 m aluminum segment ($\alpha \approx 23 \times 10^{-6}$ K\textsuperscript{-1}), this induces:
+Diurnal temperature cycles at altitude can exceed 30 K. For a 50 m aluminum segment ($\alpha \approx 23 \times 10^{-6}$ K$^{-1}$), this induces:
 \begin{equation}
 \Delta L = \alpha L \Delta T \approx (23 \times 10^{-6}) \times 50 \times 30 \approx 0.0345  \text{m} = 34.5  \text{mm}
 \end{equation}
