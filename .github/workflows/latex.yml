@@ -28,31 +28,10 @@ jobs:
     - name: Install TeX Live and Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra tlmgr
+        sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra
         sudo tlmgr update --self --all
         sudo tlmgr install collection-latexrecommended collection-latexextra
-        sudo rm -f texlive.packages
-        cat << 'EOF' > texlive.packages
-        geometry
-        booktabs
-        siunitx
-        hyperref
-        amsmath
-        amssymb
-        graphicx
-        enumitem
-        microtype
-        parskip
-        setspace
-        floatflt
-        wrapfig
-        bm
-        mathrsfs
-        amsthm
-        tikz
-        xcolor
-        EOF
-        sudo tlmgr install --file=texlive.packages
+        sudo tlmgr install geometry booktabs siunitx hyperref amsmath amssymb graphicx enumitem microtype parskip setspace floatflt wrapfig bm mathrsfs amsthm tikz xcolor
     
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
