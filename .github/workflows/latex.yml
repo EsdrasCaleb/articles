@@ -28,10 +28,7 @@ jobs:
     - name: Install TeX Live and Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra
-        sudo tlmgr update --self --all
-        sudo tlmgr install collection-latexrecommended collection-latexextra
-        sudo tlmgr install geometry booktabs siunitx hyperref amsmath amssymb graphicx enumitem microtype parskip setspace floatflt wrapfig bm mathrsfs amsthm tikz xcolor
+        sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-latex-recommended texlive-pictures texlive-science lmodern dvipng
     
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
