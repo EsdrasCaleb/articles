@@ -25,6 +25,10 @@ jobs:
         rm -rf pneumatic.pdf pneumatic.log
         rm -f texlive.packages
     
+    - name: Install TeX Live
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra tlmgr
     - name: Install additional LaTeX packages
       run: |
         sudo rm -f texlive.packages
@@ -48,7 +52,7 @@ jobs:
         tikz
         xcolor
         EOF
-        sudo tlmgr install --file=texlive.packages --reinstall
+        sudo tlmgr install --file=texlive.packages
     
     - name: Compile LaTeX document
       uses: xu-cheng/texlive-action@v3
