@@ -25,12 +25,12 @@ jobs:
         rm -rf pneumatic.pdf pneumatic.log
         rm -f texlive.packages
     
-    - name: Install TeX Live
+    - name: Install TeX Live and Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra tlmgr
-    - name: Install additional LaTeX packages
-      run: |
+        sudo apt-get install -y --no-install-recommends texlive texlive-xetex texlive-latex-extra tlmgr
+        sudo tlmgr update --self --all
+        sudo tlmgr install collection-latexrecommended collection-latexextra
         sudo rm -f texlive.packages
         cat << 'EOF' > texlive.packages
         geometry
@@ -61,6 +61,7 @@ jobs:
           # Ensure the latest file is used
           git fetch origin main
           git reset --hard origin/main
+          git clean -fd
           rm -f pneumatic.pdf pneumatic.log
           xelatex -interaction=nonstopmode -file-line-error -halt-on-error pneumatic.tex
     
